@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>rapport</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="rapport-saé-2.03">Rapport SAÉ 2.03</h1>
+<p>Hadrien M, Raphaël T et Kellian S (Groupe F, BUT1 Info Semestre
+2)</p>
+<h2 id="caractéristiques-de-la-vm-utilisée">Caractéristiques de la VM
+utilisée</h2>
+<p><img src="config_vm.png" alt="Configuration de la vm"width="75%"></p>
+<h2 id="réponses-aux-questions">Réponses aux questions</h2>
+<ol type="1">
+<li><ul>
+<li><p>64 bits correspond à l’architecture du processeur de la machine.
+Il existe plusieurs types d’architectures, comme le 32 bits pour les
+ordinateurs, ou encore le ARM (32 ou 64 bits, utilisé notamment dans les
+smartphones et certains ordinateurs portables, ce type de processeur a
+pour avantage de consommer et chauffer peu). Quand on télécharge une
+image de système d’exploitation, il faut donc qu’elle corresponde au
+processeur. Dans le cas des ordinateurs, souvent on peut quand même
+installer un système 32 bits sur un ordinateur 64 bits, mais on ne
+pourra pas bénéficier des avantages du 64 bits (en 32 bits on peut
+traiter moins de données, et on est limités à un peu moins de 4Go de
+RAM)</p></li>
+<li><p>Par défaut, Virtualbox utilise une carte réseau virtuelle de type
+NAT, ou translation d’adresse, ça “traduit” l’adresse IP de la machine
+hôte à celle de la machine virtuelle. <a
+href="https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-virtualbox/">source</a></p></li>
+<li><p>Ce fichier est
+<code>usr/local/virtual_machine/infoetu/login/sae203/sae203.vbox-prev</code>.
+Il ne contient pas de champs relatifs au processeur de la VM, par
+ailleurs il n’est pas recommandé de l’éditer directement.</p></li>
+</ul></li>
+<li><ul>
+<li><p>Un fichier <code>iso</code> <strong>bootable</strong> est un
+disque dématérialisé (de type CD, DVD, etc) qui permet de démarrer une
+machine, notamment pour installer un système d’exploitation, ou encore
+essayer un OS avant de l’installer (images iso de type <em>live
+CD</em>). <a
+href="https://www.winzip.com/fr/learn/file-formats/iso/">source</a></p></li>
+<li><p>MATE: Environnement de bureau qui utilise <em>GNOME</em> comme
+base. Il est créé pour les systèmes UNIX. <a
+href="https://mate-desktop.org/fr/">source</a></p></li>
+<li><p>GNOME: Acronyme de <em>GNU Network Object Model Environment</em>,
+est un environnement de bureau libre dont l’objectif est de rencdre
+accessible l’utilisation d’un système d’exploitation GNU Linux à un plus
+grand nombre. <a
+href="https://doc.ubuntu-fr.org/gnome">source</a></p></li>
+<li><p>Un <em>serveur web</em> est un serveur qui répond à des requêtes
+WWW sur un réseau. Les serveurs Web hébergent les <em>sites web</em> et
+leur ensemble constitue le World Wide Web. <a
+href="https://fr.wikipedia.org/wiki/Serveur_web">source</a></p></li>
+<li><p><em>SecureShell</em> (<code>ssh</code>) est un programme
+informatique et un protocole de communication, sécurisé par des clés. Il
+permet, par exemple, de se connecter à distance à une machine Linux,
+préalablement munie d’un programme nommé <em>serveur SSH</em>, à partir
+d’une machine cliente et d’un programme de <em>client SSH</em>, avec les
+identifiants et mots de passe adéquats, et d’entrer des commandes à la
+machine serveur, comme on le ferait en personne, face à la machine
+serveur, à travers la console ou un terminal d’invites de commandes. <a
+href="https://fr.wikipedia.org/wiki/Secure_Shell">source</a></p></li>
+<li><p>Un serveur mandataire, plus communément appelé <em>proxy</em>,
+est un serveur informatique qui a pour fonction de relayer des requêtes
+entre un poste client et un serveur. <a
+href="https://www.varonis.com/fr/blog/serveur-proxy">source</a></p></li>
+</ul></li>
+<li><ul>
+<li><p>On peut utiliser la commande <code>id</code> tout en étant
+connecté sous l’utilisateur dont on souhaite savoir dans quel groupe il
+est. Cette commande renvoie plusieurs informations: le nom
+d’utilisateur, son UID (<em>User ID</em>), son GID (<em>Group ID</em>)
+ainsi que les GID et noms des groupes où il est. (Source: le manuel
+intégré à Linux Debian (commande <code>man id</code>))</p></li>
+<li><p><img src="cmd_id.png" width=75%></p></li>
+<li><p>Figure: capture d’écran du résultat de la commande
+<code>id</code>, ici réalisée sur mon ordinateur personnel. En rouge,
+l’UID de mon compte utilisateur, en vert le nom de mon utilisateur (ici
+<em>mimo</em>), et en rose le GID qui correspond au groupe de mon
+utilisateur. En bleu le GID et en orange le nom des groupes dont je fais
+partie.</p></li>
+</ul></li>
+<li><ul>
+<li><p>Grâce à la commande <code>uname -r</code> nous avons remarqué que
+la version du noyau Linux de nos installations est la
+<em>6.1.0-18-amd64</em>.</p></li>
+<li><p>Les suppléments invités servent à optimiser la machine virtuelle:
+optimiser ses performances et ajouter des fonctionnalités, comme le
+partage de fichiers ou du presse papier (commandes <em>copier</em> et
+<em>coller</em>) entre la machine hôte et invitée, ou encore
+l’adaptation automatique de la résolution d’écran e fonction des
+dimensions de la fenêtre. <a
+href="https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox">source</a></p></li>
+<li><p>De manière générale, la commande <code>mount</code> permet de
+manipuler le montage des différents ssystèmes de fichiers (partitions,
+disques…), dans notre cas nous a permis de monter l’image ISO des CD ROM
+des suppléments invités de notre VM</p></li>
+</ul></li>
+<li><ul>
+<li><p>Le projet <em>Debian</em> est à la base un projet universitaire
+de Ian Murdok afin que Linux reste libre et accessible. Le nom Debian
+vient de son propre nom, et de celui de sa femme (Debra) <a
+href="http://www.debianhelp.co.uk">source</a></p></li>
+<li><p>La prise en charge LTS dure 5 ans, ELTS 10 ans quand à la prise
+en charge minimum est de 3 ans. <a
+href="https://debian.org/releases/index.fr.html">Source</a></p></li>
+<li><p><a href="https://wiki.debian.org/LTS">source</a> Les versions
+actuellement prises en charge par Debian sont celles de la version 6 à
+la version 12, respectivement nommées dans l’ordre (<em>squeeze , wheezy
+, jessie , stretch , buster , bullseye , bookworm</em>) Cependant les
+versions 6 à 9 sont actuellement en fin de vie, la version 10 est prise
+en charge par la <em>LTS team</em> et les 11 et 12 par la <em>Support
+and security team</em>.</p></li>
+<li><p>Les noms de code des différentes versions de Debian proviennent
+principalement de personnages de <em>Toy Story</em> <a
+href="http://www.debianhelp.co.uk/">source</a></p></li>
+<li><p>Il y a actuellement 9 architectures prises en charge par Debian
+Bullseye qui sont :</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nom architecture</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>amd64</td>
+<td>Processeurs 64 bits PC, présents sur la plupart des ordinateurs
+actuels</td>
+</tr>
+<tr class="even">
+<td>i386</td>
+<td>Processeurs 32 bits PC, présent sur des ordinateurs datant d’avant
+les années 2010</td>
+</tr>
+<tr class="odd">
+<td>ppc64el</td>
+<td>Plateforme “IBM Power”, processeurs PowerPC qui ont notamment équipé
+d’anciens Mac, ou encore des consoles de jeu comme la Nintendo Gamecube,
+Wii et WiiU, et la XBOX360</td>
+</tr>
+<tr class="even">
+<td>s390x</td>
+<td>Plateforme 32 bits d’IBM, des années 90, a principalement été
+utilisée dans des serveurs d’entreprise</td>
+</tr>
+<tr class="odd">
+<td>armel</td>
+<td>ancienne architecture de processeurs ARM 32 bits, qui était utilsée
+dans des NAS, ou encore certains mini PC</td>
+</tr>
+<tr class="even">
+<td>armhf</td>
+<td>Architecture ARM 32 bits avec un “hard float” (point flottant
+matériel), qui a été utilisée sur d’anciens smartphones entre autres,
+aussi sur des consoles de jeu portables comme la Nintendo DS et Nintendo
+3DS</td>
+</tr>
+<tr class="odd">
+<td>arm64</td>
+<td>Architecture ARM 64 Bits, utilisée sur la majorité des smartphones,
+tablettes, et plus récemment certains ordinateurs portables</td>
+</tr>
+<tr class="even">
+<td>mipsel</td>
+<td>Architecture MIPS 32 BITS Little Endian, utilisé sur certains
+MicroPC et cartes de développement</td>
+</tr>
+<tr class="odd">
+<td>mips64el</td>
+<td>Même que ci dessus en 64 bits, a notamment été utilisée sur des
+consoles de jeu comme la Playstation 1 et 2, ou encore la Nintendo 64,
+et certains matériels réseaux (routeurs Cisco)</td>
+</tr>
+</tbody>
+</table>
+<p><a
+href="https://wiki.debian.org/fr/DebianBullseye#Architectures">source</a></p>
+<ul>
+<li><p>le nom de code de la première version est “Buzz”, elle a été
+annoncée le 17 juin 1996,le nom de distribution était : Debian GNU/Linux
+1.1. <a href="https://wiki.debian.org/fr/DebianBuzz">Source</a></p></li>
+<li><p>Le nom de code de la dernière version à ce jour est
+<em>Bookworm</em>. Sur la page de ce dernier on nous dit quand il a été
+publié (Le 10 juin 2024) mais pas lorsqu’il fut annoncé. La version
+actuelle est la 12.5.</p></li>
+</ul></li>
+<li><ul>
+<li><p>Gitea est une Forge logicielle (éditeur de texte conçu pour le
+développement d’applications) basée sur Git et sortie en 2016 sous
+licence MIT. <a
+href="https://fr.wikipedia.org/wiki/GiteaGitea">source</a></p></li>
+<li><p>Nous pouvons le comparer à GitLab car ils ont la même base (Git),
+même si l’un sert plus a de la logistique tel qu’un suivi de bug, une
+livraison et une intégration continue(GitLab) et l’autre à de
+l’hébergement de code source (Gitea)mais nous pouvons également le
+comparer à GitHub, qui est également sous la base Git et qui sert
+également à héberger des codes sources, mais celui ci se passe sur un
+site web. <a
+href="https://fr.wikipedia.org/wiki/Git">source</a></p></li>
+</ul></li>
+<li><ul>
+<li><p>Gitk est un navigateur de dépôt graphique, il se lance grâce à la
+commande gitk [source]
+(https://www.atlassian.com/fr/git/tutorials/gitk)</p></li>
+<li><p>Git gui permet de modifier ces répertoires en faisant de nouveau
+commits et autre <a href="https://git-scm.com/docs/git-gui">source</a> ,
+pour le lancer il suffit de taper la commande git citool <a
+href="https://askubuntu.com/questions/432163/how-to-start-git-gui">source</a></p></li>
+</ul></li>
+<li><ul>
+<li>Grâce à la commande: wget -O gitea
+https://dl.gitea.com/gitea/1.21.7/gitea-1.21.7-linux-amd64 chmod +x
+gitea <a
+href="https://docs.gitea.com/next/installation/install-from-binary">source</a>
+[commande] (cmd_id.png)</li>
+</ul>
+<p>Nous pouvons installer la bonne dernière version de Gitea pour notre
+machine virtuelle (il y en a plusieurs en fonction du type de machine
+utiliser) puis directement après, si la bonne version est installée,
+nous pouvons le rendre exécutable.</p>
+<ul>
+<li>Nous pouvons mettre à jour Gitea en le stoppant, remplacer le code
+binaire dans /usr/local/bin/gitea puis en relançant l’instance, il y a
+deux méthode pour la relancer, l’une avec systemd qui est recommander ou
+il suffit juste d’entrer la commande(systemctl restart gitea), et sans
+systemd, nous pouvons utiliser la commande (killall -1 gitea) qui
+relance l’instance grace a SIGHUP <a
+href="https://docs.gitea.com/next/installation/install-from-binary">source</a></li>
+</ul></li>
+</ol>
+<h2 id="travaux-effectués">Travaux effectués</h2>
+<h3 id="semaine-du-12022024">Semaine du 12/02/2024</h3>
+<ul>
+<li><p>Raphaël: Recréation de la machine pour l’utiliser en tant que
+root - Échec, il me laisse pas configurer les logins.</p></li>
+<li><p>Hadrien: Réinstallation de la VM en utilisant les fichiers de
+préconfiguration, sur mon ordinateur personnel</p>
+<ul>
+<li>modification du script <code>preseed.cfg</code> afin d’avoir le bon
+chemin vers mon disque Debian.iso
+<ul>
+<li>en suivant les consignes d’ajustement de la préconfiguration</li>
+</ul></li>
+</ul></li>
+<li><p>Kellian: réinstallation de la VM avec l’aide d’Hadrien pour avoir
+les bons paramètres de configuration</p></li>
+</ul>
+<h3 id="semaine-du-19022024">Semaine du 19/02/2024</h3>
+<ul>
+<li>Rédaction de ce fichier en format Markdown, pour le premier
+rendu</li>
+</ul>
+<h3 id="semaine-du-11032024">Semaine du 11/03/2024</h3>
+<ul>
+<li>Premier retour avec commentaires sur le fichier de rendu
+Markdown</li>
+<li>En prenant en compte les commentaires du professeur, rectifications
+sur le rapport:
+<ul>
+<li>Ajout de références aux réponses des questions de la SAÉ</li>
+<li>Redimensionnement des images</li>
+<li>Corrections diverses dans la mise en page de l’ensemble</li>
+<li>Rectification du Readme et rendu plus lisible ce dernier</li>
+<li>Sous-listes ajoutées (comme ici)</li>
+</ul></li>
+</ul>
+<h3 id="semaine-du-18032024">Semaine du 18/03/2024</h3>
+<ul>
+<li>Finalisation de la version finale du rapport:
+<ul>
+<li>Ajout d’une table des matières automatique</li>
+<li>Correction de la commande pandoc spécifiée dans le README</li>
+</ul></li>
+<li>Rendu final effectué</li>
+</ul>
+</body>
+</html>
